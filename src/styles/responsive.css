@@ -1,0 +1,81 @@
+.resto {
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+@media screen and (max-width: 499px) {
+    .nav {
+        z-index: 10;
+        background-color: #382933;
+        width: 100%;
+        position: absolute;
+
+        /* This transform moves the drawer off canvas */
+        -webkit-transform: translate(0, -400px);
+        transform: translate(0, -400px);
+        
+        /* Optionally, we animate the drawer */
+        transition: transform 0.3s ease;
+    }
+    
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);    
+    }
+
+    .nav__item {
+        display: list-item;
+        border-bottom: 1px solid #E0E0E0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .header__menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .resto-item__content {
+        padding: 16px 32px 32px;
+    }
+
+    .resto-item__name {
+        font-size: 18px;
+    }
+
+    .resto-item__description {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .resto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 14px;
+        grid-row-gap: 18px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav__list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .resto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+    }
+}
