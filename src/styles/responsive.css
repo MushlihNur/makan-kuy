@@ -58,6 +58,10 @@
         grid-column-gap: 14px;
         grid-row-gap: 18px;
     }
+
+    .resto-item__content {
+        margin: 0;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -75,7 +79,14 @@
 }
 
 @media screen and (min-width: 1200px) {
-    main {
-        max-width: 1200px;
+    .resto {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 1600px) {
+    .resto {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
