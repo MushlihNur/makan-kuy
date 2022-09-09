@@ -57,7 +57,6 @@ body {
     font-size: 4em;
     margin: 0.5em 0.25em;
     display: inline-block;
-    /* color: #212121; */
 }
 
 .header__menu {
@@ -97,7 +96,6 @@ button {
     width: 24%;
     text-align: center;
     line-height: 24px;
-    /* padding: 24px; */
     text-transform: uppercase;
 }
 
@@ -113,6 +111,8 @@ button {
 .nav a:hover {
     text-decoration: underline;
     color: #000;
+    background-color: #EEEEEE;
+    border-radius: 40px;
 }
 
 /* Jumbotron */
@@ -191,12 +191,30 @@ main {
     overflow: hidden;
 }
 
-.resto-item__thumbail {
+.resto-item__header {
+    position: relative;
+}
+
+.resto-item .resto-item__header .resto-item__thumbail {
     width: 100%;
 }
 
+.resto-item .resto-item__header .resto-item__header__rating {
+    position: absolute;
+    padding: 8px;
+    bottom: 20px;
+    left: 0;
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
+
+.resto-item .resto-item__header .resto-item__header__rating .resto-item__header__rating__score {
+    margin-left: 10px;
+}
+
 .resto-item__content {
-    padding: 16px;
+    margin: 10px;
 }
 
 .resto-item__name {
@@ -227,8 +245,87 @@ main {
 
 .resto-item__description {
     margin-top: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 12px;
     line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of line to show */
+    -webkit-box-orient: vertical;
+}
+
+/* Detail */
+
+.detail {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    text-align: start;
+}
+
+.detail-resto__name {
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    margin: 16px;
+    transform: .3s opacity;
+}
+
+.detail-resto__name::after {
+    content: '';
+    margin: 16px;
+    display: block;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.detail .detail-resto__thumbnail {
+    width: 100%;
+    max-width: 400px;
+}
+
+.detail .detail-resto__info h3,
+.detail .detail-resto__review h3 {
+    font-size: 22px;
+    margin: 8px 0;
+    text-align: center;
+}
+
+.detail .detail-resto__info h3,
+.detail .detail-resto__review h3::after {
+    content: '';
+    margin-top: 16px;
+}
+
+.detail .detail-resto__info h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.detail .detail-resto__review .reviewer {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(247, 247, 247, .2);
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Like */
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #db0000;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Footer */
