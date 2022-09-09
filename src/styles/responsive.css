@@ -37,6 +37,12 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .jumbotron {
+        background-image: url("../public/images/heros/hero-image_4-small.jpg");
+    }
+}
+
 @media screen and (min-width: 650px) {
     .resto-item__content {
         padding: 16px 32px 32px;

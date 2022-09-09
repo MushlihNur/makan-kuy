@@ -120,7 +120,7 @@ button {
 .jumbotron {
     display: flex;
     align-items: center;
-    background-image: url("../public/images/heros/hero-image_4.jpg");
+    background-image: url("../public/images/heros/hero-image_4-large.jpg");
     min-height: 350px;
     width: 100%;
     text-align: center;
