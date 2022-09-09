@@ -34,26 +34,26 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
   <article class="resto-item">
         <div class="resto-item__header">
-            <img class="resto-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name}">
+            <img class="lazyload resto-item__thumbnail" data-src="${CONFIG.BASE_IMAGE_URL}${resto.pictureId}" alt="${resto.name || '-'}">
             <div class="resto-item__header__rating">
-                <p>⭐️<span class="resto-item__header__rating__score">${resto.rating}</span></p>
+                <p>⭐️<span class="resto-item__header__rating__score">${resto.rating || '-'}</span></p>
             </div>
         </div>
        <div class="resto-item__content">
-           <h3 class="resto-item__name"><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
-           <p class="resto-item__city">Lokasi: ${resto.city}</p>
-           <p class="resto-item__description">${resto.description}</p>
+           <h3 class="resto-item__name"><a href="${`/#/detail/${resto.id}`}">${resto.name || '-'}</a></h3>
+           <p class="resto-item__city">Lokasi: ${resto.city || '-'}</p>
+           <p class="resto-item__description">${resto.description || '-'}</p>
        </div>
   </article>
 `;
 
-const createLikeButtonTemplate = () => `
+const createLikeRestaurantButtonTemplate = () => `
   <button aria-label="like this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createLikedRestaurantButtonTemplate = () => `
   <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
@@ -62,6 +62,6 @@ const createLikedButtonTemplate = () => `
 export {
   createRestoDetailTemplate,
   createRestoItemTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createLikedRestaurantButtonTemplate,
 };
